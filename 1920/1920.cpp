@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-
+//이분탐색이용
 int n,m;
 vector <int> v;
 vector <int> answer;
