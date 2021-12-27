@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string.h>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct location {
+	int x;
+	int y;
+};
+
+vector<location> A;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	cout.tie(NULL);
+	cin.tie(NULL);
+
+	int N;
+
+	cin >> N;
+
+	for (int i = 0; i < N; i++) {
+		location a;
+		cin >> a.x;
+		cin >> a.y;
+		A.push_back(a);
+	}
+
+	struct {
+		bool operator()(location a, location b) {
+			if (a.x == b.x)
+				return a.y < b.y;
+			else
+				return a.x < b.x;
+		}
+	} compare;
+
+	sort(A.begin(), A.end(), compare);
+
+	for (int i = 0; i < N; i++) {
+		cout << A[i].x << " " << A[i].y << "\n";
+	}
+
+	return 0;
+}
