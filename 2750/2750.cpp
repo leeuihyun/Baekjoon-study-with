@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-
+//정렬이용
 int n;
 vector <int> v;
 
