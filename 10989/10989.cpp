@@ -5,7 +5,7 @@ using namespace std;
 
 int n;
 int idx = 0;
-vector <int> v(10001,0);
+vector <int> v(10001);
 
 int main(){
     cin.tie(NULL);
