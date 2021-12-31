@@ -1,0 +1,5 @@
+#문제 주소 : https://www.acmicpc.net/problem/10845
+
+#문제 풀이 방법 : 배열로 큐를 구현했다
+
+#시간복잡도 : O(n)

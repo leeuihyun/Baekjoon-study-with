@@ -1,0 +1,104 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int A[10000];
+int head = 0, tail = 0;
+
+void push(int x) {
+	if (head == tail) {
+		A[head] = x;
+		tail++;
+		if (tail >= 10000)
+			tail = 0;
+	}
+	else {
+		if (tail + 1 >= 10000) {
+			if (head == 0)
+				cout << "QUEUE FULL\n";
+		}
+		else if (tail + 1 == head)
+			cout << "QUEUE FULL\n";
+		else {
+			A[tail++] = x;
+			if (tail >= 10000)
+				tail = 0;
+		}
+	}
+}
+
+int pop() {
+	if (tail == head)
+		return -1;
+	else
+		return A[head++];
+}
+
+int size() {
+	if (tail == head)
+		return 0;
+	else {
+		if (head > tail)
+			return (head - tail) + 1;
+		else
+			return tail - head;
+	}
+}
+
+int empty() {
+	if (head != tail)
+		return 0;
+	else
+		return 1;
+}
+
+int front() {
+	if (head == tail)
+		return -1;
+	else
+		return A[head];
+}
+
+int back() {
+	if (head == tail)
+		return -1;
+	else
+		return A[tail - 1];
+}
+
+int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
+
+	int N, j = 0;
+
+	cin >> N;
+
+	int* print = new int[N];
+
+	for (int i = 0; i < N; i++) {
+		string command;
+		cin >> command;
+		if (command == "push") {
+			int num;
+			cin >> num;
+			push(num);
+		}
+		else if (command == "pop")
+			print[j++] = pop();
+		else if (command == "size")
+			print[j++] = size();
+		else if (command == "empty")
+			print[j++] = empty();
+		else if (command == "front")
+			print[j++] = front();
+		else
+			print[j++] = back();
+	}
+
+	for (int i = 0; i < j; i++)
+		cout << print[i] << endl;
+
+	delete[] print;
+
+	return 0;
+}
