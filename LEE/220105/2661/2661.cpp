@@ -14,7 +14,6 @@ void solve(int cur,string ss){
         string first = ss.substr(ss.size()-i,i);
         string second = ss.substr(ss.size()-(2*i),i);
         if(first==second){
-            
             return;
         }
     }

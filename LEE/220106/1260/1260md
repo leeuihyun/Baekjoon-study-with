@@ -1,0 +1,9 @@
+#문제 주소
+https://www.acmicpc.net/problem/1260
+
+#문제 풀이 방법
+dfs,bfs사용
+
+#시간복잡도
+dfs 시간복잡도 -> O(V^2)
+bfs 시간복잡도 -> O(V^2)
