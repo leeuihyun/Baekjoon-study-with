@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+#define MAX 1000000
+
+int N;
+int A[MAX];
+
+int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
+	int tmp;
+
+	cin >> N;
+
+	for (int i = 0; i < N; i++) {
+		cin >> tmp;
+		A[i] = tmp;
+	}
+
+	sort(A, A + N);
+
+	for (int i = 0; i < N; i++)
+		cout << A[i] << "\n";
+
+	return 0;
+}

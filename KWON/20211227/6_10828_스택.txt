@@ -1,0 +1,80 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int A[10000];
+int top = -1;
+
+void push(int x) {
+	if (top == 10000) {
+		cout << "STACK FULL\n";
+	}
+	else {
+		A[++top] = x;
+	}
+}
+
+int pop() {
+	if (top == -1) {
+		return -1;
+	}
+	else {
+		return A[top--];
+	}
+}
+
+int size() {
+	if (top == -1)
+		return 0;
+	else
+		return top + 1;
+}
+
+int empty() {
+	if (top >= 0)
+		return 0;
+	else
+		return 1;
+}
+
+int cout_top() {
+	if (top == -1)
+		return -1;
+	else
+		return A[top];
+}
+
+int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
+
+	int N, j = 0;
+
+	cin >> N;
+
+	int* print = new int[N];
+
+	for (int i = 0; i < N; i++) {
+		string command;
+		cin >> command;
+		if (command == "push") {
+			int num;
+			cin >> num;
+			push(num);
+		}
+		else if (command == "pop")
+			print[j++] = pop();
+		else if (command == "size")
+			print[j++] = size();
+		else if (command == "empty")
+			print[j++] = empty();
+		else
+			print[j++] = cout_top();
+	}
+
+	for (int i = 0; i < j; i++)
+		cout << print[i] << endl;
+
+	delete[] print;
+
+	return 0;
+}

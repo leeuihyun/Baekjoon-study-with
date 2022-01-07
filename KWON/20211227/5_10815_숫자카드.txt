@@ -1,0 +1,82 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+#define MAX 500001
+#define SWAP(x, y, z) (z = x, x = y, y = z)
+
+int N, M;
+int A[MAX], B[MAX];
+
+void search(int a, int N) {
+	int left = 0, right = N - 1;
+	while (left <= right) {
+		int mid = (left + right) / 2;
+		if (A[mid] == a) {
+			cout << "1 ";
+			return;
+		}
+		else if (A[mid] < a) {
+			left = mid + 1;
+		}
+		else {
+			right = mid - 1;
+		}
+	}
+	cout << "0 ";
+	return;
+}
+
+void quick_sort(int left, int right) {
+	int i, j, pivot, tmp;
+	if (left < right) {
+		i = left;
+		j = right + 1;
+		pivot = A[left];
+		do {
+			do
+				i++;
+			while (A[i] < pivot);
+			do
+				j--;
+			while (A[j] > pivot);
+			if (i < j)
+				SWAP(A[i], A[j], tmp);
+		} while (i < j);
+		SWAP(A[left], A[j], tmp);
+		quick_sort(left, j - 1);
+		quick_sort(j + 1, right);
+	}
+}
+
+int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
+	int tmp;
+
+	cin >> N;
+
+	if (N <= MAX) {
+		for (int i = 0; i < N; i++) {
+			cin >> tmp;
+			if (tmp <= 10000000 && tmp >= -10000000)
+				A[i] = tmp;
+		}
+	}
+
+	quick_sort(0, N - 1);
+
+	cin >> M;
+	
+	if (M <= MAX) {
+		for (int i = 0; i < M; i++) {
+			cin >> tmp;
+			if (tmp <= 10000000 && tmp >= -10000000)
+				B[i] = tmp;
+		}
+	}
+
+	for (int i = 0; i < M; i++)
+		search(B[i], N);
+
+	return 0;
+}
