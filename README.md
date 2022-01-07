@@ -11,4 +11,4 @@ https://www.acmicpc.net/problem/문제번호
 O(N)
 
 ## Commit 양식
-백준 년월일 문제번호 (ex. 백준 20220106 1234번)
+백준 년월일 (ex. 백준 20220106)
