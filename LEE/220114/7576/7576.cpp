@@ -41,7 +41,7 @@ int main() {
 				visited[i][j] = true;
 				q.push(make_pair(make_pair(i, j), 0));
 			}
-			else number_check = true;
+			else number_check = true;   
 		}
 	}
 	if (!number_check) {
