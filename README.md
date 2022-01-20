@@ -1,6 +1,7 @@
 # Baekjoon-study-with
 
-## md 양식
+## Markdown(.md) 양식
+- - -
 > 문제 주소  
 >> https://www.acmicpc.net/problem/문제번호
 
@@ -9,7 +10,10 @@
 
 > 시간복잡도  
 >> O(N)
+- - -
 
 ## Commit 양식
+- - -
 > 백준 년월일 문제번호  
 >> ex. 백준 20220101 1234번)
+- - -
