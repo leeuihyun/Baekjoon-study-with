@@ -2,8 +2,8 @@
 
 ## Markdown(.md) 양식
 - - -
-> 문제 주소  
->> https://www.acmicpc.net/problem/문제번호
++ 문제 주소  
+++ https://www.acmicpc.net/problem/문제번호
 
 > 문제 풀이 방법  
 >> ~~를 이용하여 풀이하였다
